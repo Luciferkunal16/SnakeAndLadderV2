@@ -1,5 +1,8 @@
 import logging
 import random
+logging.basicConfig(filename='snake_an_ladder_log.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+logging.warning('This will get logged to a file')
+logging.info("Logger Running")
 
 
 class SnakeAndLadderMain:
@@ -52,5 +55,10 @@ class SnakeAndLadderMain:
 
 
 if __name__ == "__main__":
-    obj = SnakeAndLadderMain()
-    obj.main_game()
+    try:
+        obj = SnakeAndLadderMain()
+        obj.main_game()
+    except Exception as e:
+        print(e)
+        logging.ERROR(e)
+
